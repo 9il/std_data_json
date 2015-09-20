@@ -14,6 +14,7 @@
  */
 module stdx.data.json.parser;
 
+
 ///
 unittest
 {
@@ -38,7 +39,7 @@ unittest
 import stdx.data.json.lexer;
 import stdx.data.json.value;
 import std.array : appender;
-import std.range : ElementType, isInputRange;
+import std.range.primitives;
 
 
 /**
@@ -776,6 +777,7 @@ struct JSONParserNode
 enum isJSONTokenInputRange(R) = isInputRange!R && is(typeof(R.init.front) : JSONToken);
 
 static assert(isJSONTokenInputRange!(JSONLexerRange!string));
+static assert(isJSONParserNodeInputRange!(JSONParserNode[]));
 
 /// Tests if a given type is an input range of $(D JSONParserNode).
 enum isJSONParserNodeInputRange(R) = isInputRange!R && is(typeof(R.init.front) : JSONParserNode);
