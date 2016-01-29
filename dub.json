@@ -1,5 +1,5 @@
 {
-	"name": "std_data_json",
+	"name": "std_data_json_dummy",
 	"description": "Phobos candidate JSON implementation.",
 	"copyright": "Copyright © 2014-2015, Sönke Ludwig",
 	"license": "BSL-1.0",
